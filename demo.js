@@ -33,7 +33,7 @@ wx.ready((function() {
             });
             break;
         case "shareToExternalContact":
-                         alert("群发消息给客户1=======");
+                         alert("群发消息给客户11=======");
 
             wx.agentConfig({
                 corpid: 'wwf861751e07fa2ed0', // 必填，企业微信的corpid，必须与当前登录的企业一致
