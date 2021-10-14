@@ -33,13 +33,14 @@ wx.ready((function() {
             });
             break;
         case "shareToExternalContact":
-            wx.invoke("shareToExternalContact", {
+              wx.invoke("shareToExternalContact", {
                 text: {
                       content:"你好",    // 文本内容
                 },
-                attachments: [
-                ]},function(res) {
+                },function(res) {
+                    alert(JSON.stringify(res))
                   if (res.err_msg == "shareToExternalContact:ok") {
+                    alert("错误")
                   }
               }
           );
