@@ -33,18 +33,38 @@ wx.ready((function() {
             });
             break;
         case "shareToExternalContact":
-              wx.invoke("shareToExternalContact", {
-                text: {
-                      content:"你好",    // 文本内容
+                         alert("群发消息给客户1=======");
+
+            wx.agentConfig({
+                corpid: 'wwf861751e07fa2ed0', // 必填，企业微信的corpid，必须与当前登录的企业一致
+                agentid: '1000007', // 必填，企业微信的应用id （e.g. 1000247）
+                timestamp: 1634213234, // 必填，生成签名的时间戳
+                nonceStr: 'AAA', // 必填，生成签名的随机串
+                signature: '7bfed3003c6f00d246f037fcf32f0d4642dbc9f1',// 必填，签名，见附录-JS-SDK使用权限签名算法
+                jsApiList: ['shareToExternalContact'], //必填，传入需要使用的接口名称
+                success: function(res) {
+                    alert("群发消息给客户2=======");
+
+                    wx.invoke("shareToExternalContact", {
+                        text: {
+                              content:"你好",    // 文本内容
+                        },
+                        },function(res) {
+                            alert(JSON.stringify(res))
+                          if (res.err_msg == "shareToExternalContact:ok") {
+                            alert("错误")
+                          }
+                      }
+                  );
                 },
-                },function(res) {
-                    alert(JSON.stringify(res))
-                  if (res.err_msg == "shareToExternalContact:ok") {
-                    alert("错误")
-                  }
-              }
-          );
-            alert("群发消息给客户=======");
+                fail: function(res) {
+                    if(res.errMsg.indexOf('function not exist') > -1){
+                        alert('版本过低请升级')
+                    }
+                }
+            });
+            
+            alert("群发消息给客户3=======");
             break;
         case "onMenuShareAppMessage":
             wx.onMenuShareAppMessage(shareConfig),
