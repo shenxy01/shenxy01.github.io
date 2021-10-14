@@ -32,6 +32,19 @@ wx.ready((function() {
                 }
             });
             break;
+        case "shareToExternalContact":
+            wx.invoke("shareToExternalContact", {
+                text: {
+                      content:"你好",    // 文本内容
+                },
+                attachments: [
+                ]},function(res) {
+                  if (res.err_msg == "shareToExternalContact:ok") {
+                  }
+              }
+          );
+            alert("群发消息给客户=======");
+            break;
         case "onMenuShareAppMessage":
             wx.onMenuShareAppMessage(shareConfig),
             alert("已注册获取“转发给同事”状态事件");
