@@ -40,7 +40,7 @@ wx.ready((function() {
                 agentid: '1000007', // 必填，企业微信的应用id （e.g. 1000247）
                 timestamp: 1634213234, // 必填，生成签名的时间戳
                 nonceStr: 'AAA', // 必填，生成签名的随机串
-                signature: '7bfed3003c6f00d246f037fcf32f0d4642dbc9f1',// 必填，签名，见附录-JS-SDK使用权限签名算法
+                signature: 'b3a0a667b4aefa4691c459b006b5bdf7f8133e80',// 必填，签名，见附录-JS-SDK使用权限签名算法
                 jsApiList: ['shareToExternalContact'], //必填，传入需要使用的接口名称
                 success: function(res) {
                     alert("群发消息给客户2=======");
@@ -58,6 +58,7 @@ wx.ready((function() {
                   );
                 },
                 fail: function(res) {
+                     alert("群发消息给客户失败");
                     if(res.errMsg.indexOf('function not exist') > -1){
                         alert('版本过低请升级')
                     }
