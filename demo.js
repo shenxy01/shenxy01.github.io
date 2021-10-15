@@ -68,7 +68,7 @@ wx.ready((function() {
             alert("群发消息给客户3=======");
             break;
           case "sendChatMessage":
-                         alert("分享内容给客户12=======");
+                         alert("分享内容给客户13=======");
 
             wx.agentConfig({
                 corpid: 'wwf861751e07fa2ed0', // 必填，企业微信的corpid，必须与当前登录的企业一致
@@ -81,7 +81,7 @@ wx.ready((function() {
                     alert("分享内容给客户2=======");
 
                 wx.invoke('sendChatMessage', {
-                                msgtype:"text", //消息类型，必填
+                                msgtype:"news", //消息类型，必填
                                 enterChat: true, //为true时表示发送完成之后顺便进入会话，仅移动端3.1.10及以上版本支持该字段
                                 news:
                                 {
