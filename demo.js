@@ -38,9 +38,9 @@ wx.ready((function() {
             wx.agentConfig({
                 corpid: 'wwf861751e07fa2ed0', // 必填，企业微信的corpid，必须与当前登录的企业一致
                 agentid: '1000007', // 必填，企业微信的应用id （e.g. 1000247）
-                timestamp: 1634213234, // 必填，生成签名的时间戳
+                timestamp: 1634265193, // 必填，生成签名的时间戳
                 nonceStr: 'AAA', // 必填，生成签名的随机串
-                signature: 'b3a0a667b4aefa4691c459b006b5bdf7f8133e80',// 必填，签名，见附录-JS-SDK使用权限签名算法
+                signature: '343d9b18c8278a17db6107c7f82a922262774d02',// 必填，签名，见附录-JS-SDK使用权限签名算法
                 jsApiList: ['shareToExternalContact'], //必填，传入需要使用的接口名称
                 success: function(res) {
                     alert("群发消息给客户2=======");
@@ -75,7 +75,7 @@ wx.ready((function() {
                 agentid: '1000007', // 必填，企业微信的应用id （e.g. 1000247）
                 timestamp: 1634265193, // 必填，生成签名的时间戳
                 nonceStr: 'AAA', // 必填，生成签名的随机串
-                signature: '37bd8452fcdafe961b0fc5380c0ecbb472a3dc2f',// 必填，签名，见附录-JS-SDK使用权限签名算法
+                signature: '343d9b18c8278a17db6107c7f82a922262774d02',// 必填，签名，见附录-JS-SDK使用权限签名算法
                 jsApiList: ['sendChatMessage'], //必填，传入需要使用的接口名称
                 success: function(res) {
                     alert("分享内容给客户1=======");
