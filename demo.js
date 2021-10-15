@@ -67,6 +67,48 @@ wx.ready((function() {
             
             alert("群发消息给客户3=======");
             break;
+          case "sendChatMessage":
+                         alert("分享内容给客户1=======");
+
+            wx.agentConfig({
+                corpid: 'wwf861751e07fa2ed0', // 必填，企业微信的corpid，必须与当前登录的企业一致
+                agentid: '1000007', // 必填，企业微信的应用id （e.g. 1000247）
+                timestamp: 1634265193, // 必填，生成签名的时间戳
+                nonceStr: 'AAA', // 必填，生成签名的随机串
+                signature: '37bd8452fcdafe961b0fc5380c0ecbb472a3dc2f',// 必填，签名，见附录-JS-SDK使用权限签名算法
+                jsApiList: ['sendChatMessage'], //必填，传入需要使用的接口名称
+                success: function(res) {
+                    alert("分享内容给客户1=======");
+
+                wx.invoke('sendChatMessage', {
+                                msgtype:"text", //消息类型，必填
+                                enterChat: true, //为true时表示发送完成之后顺便进入会话，仅移动端3.1.10及以上版本支持该字段
+                                text: {
+                                    content:"你好", //文本内容
+                                },
+                                news:
+                                {
+                                    link: "http://movie.douban.com/subject/25785114/", //H5消息页面url 必填
+                                    title: "互联网之子", //H5消息标题
+                                    desc: "在长大的过程中，我才慢慢发现，我身边的所有事，别人跟我说的所", //H5消息摘要
+                                    imgUrl: "http://demo.open.weixin.qq.com/jssdk/images/p2166127561.jpg", //H5消息封面图片URL
+                                },
+                            }, function(res) {
+                                if (res.err_msg == 'sendChatMessage:ok') {
+                                    //发送成功
+                                }
+                 })
+                },
+                fail: function(res) {
+                     alert("分享内容给客户1失败");
+                    if(res.errMsg.indexOf('function not exist') > -1){
+                        alert('版本过低请升级')
+                    }
+                }
+            });
+            
+            alert("分享内容给客户1=======");
+            break;
         case "onMenuShareAppMessage":
             wx.onMenuShareAppMessage(shareConfig),
             alert("已注册获取“转发给同事”状态事件");
