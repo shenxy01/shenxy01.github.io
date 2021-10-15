@@ -33,7 +33,7 @@ wx.ready((function() {
             });
             break;
         case "shareToExternalContact":
-                         alert("群发消息给客户11=======");
+                         alert("群发消息给客户12=======");
 
             wx.agentConfig({
                 corpid: 'wwf861751e07fa2ed0', // 必填，企业微信的corpid，必须与当前登录的企业一致
@@ -68,7 +68,7 @@ wx.ready((function() {
             alert("群发消息给客户3=======");
             break;
           case "sendChatMessage":
-                         alert("分享内容给客户1=======");
+                         alert("分享内容给客户11=======");
 
             wx.agentConfig({
                 corpid: 'wwf861751e07fa2ed0', // 必填，企业微信的corpid，必须与当前登录的企业一致
@@ -78,7 +78,7 @@ wx.ready((function() {
                 signature: '343d9b18c8278a17db6107c7f82a922262774d02',// 必填，签名，见附录-JS-SDK使用权限签名算法
                 jsApiList: ['sendChatMessage'], //必填，传入需要使用的接口名称
                 success: function(res) {
-                    alert("分享内容给客户1=======");
+                    alert("分享内容给客户2=======");
 
                 wx.invoke('sendChatMessage', {
                                 msgtype:"text", //消息类型，必填
@@ -100,14 +100,14 @@ wx.ready((function() {
                  })
                 },
                 fail: function(res) {
-                     alert("分享内容给客户1失败");
+                     alert("分享内容给客户失败");
                     if(res.errMsg.indexOf('function not exist') > -1){
                         alert('版本过低请升级')
                     }
                 }
             });
             
-            alert("分享内容给客户1=======");
+            alert("分享内容给客户3=======");
             break;
         case "onMenuShareAppMessage":
             wx.onMenuShareAppMessage(shareConfig),
